@@ -69,10 +69,11 @@ function rebuildTree(container, list) {
             rebuildTree(container, list);
         });
 
-        // const deleteEl = liEl.querySelector('[data-id=deleteAll]');
-        // deleteEl.addEventListener('click', (evt) => {
-        //     spendList.deleteAll(item);
-        // });
+        const deleteEl = liEl.querySelector('[data-id=deleteAll]');
+        deleteEl.addEventListener('click', (evt) => {
+            spendList.deleteAll(item);
+            location.reload(true);
+        });
 
         container.appendChild(liEl);
     }
