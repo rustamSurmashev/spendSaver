@@ -11,6 +11,8 @@ const totalPrice = document.querySelector('#totalPrice');
 const spendList = new Total(new ProductLocalStorage());
 rebuildTree(productEl, spendList);
 
+
+
 formEl.addEventListener('submit', (evt) => {
     evt.preventDefault();
     const name = nameEl.value;
