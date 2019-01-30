@@ -5,12 +5,9 @@ const formEl = document.querySelector('#product-form');
 const nameEl = document.querySelector('#product-name');
 const priceEl = document.querySelector('#product-price');
 const productEl = document.querySelector('#product-list');
-const totalPrice = document.querySelector('#totalPrice');
-// const findMax = document.querySelector('#priceMax');
 
 const spendList = new Total(new ProductLocalStorage());
 rebuildTree(productEl, spendList);
-
 
 
 formEl.addEventListener('submit', (evt) => {
@@ -87,6 +84,4 @@ function rebuildTree(container, list) {
         const last = container.lastElementChild;
         last.querySelector('[data-id=down]').classList.add('invisible');
     }
-    // totalPrice.textContent = calculator.sum(priceEl);
-    // findMax.textContent= calculator.findMax(priceEl);
 };

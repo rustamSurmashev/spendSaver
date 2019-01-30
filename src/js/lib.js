@@ -28,25 +28,3 @@ export class Total {
         this.storage.deleteAll(item);
     }
 }
-
-// export const calculator = {
-//     items: [],
-//     sum() {
-//         let result = 0;
-//         for (const item of this.items) {
-//             result = result + item.price;
-//         }
-//         return result;},
-
-// findMax() {
-//     let maxResult = 0;
-//     let name = "";
-//     for (const item of this.items) {
-//         if (item > maxResult) {
-//             maxResult = item.price;
-//             name = item.title;
-//         }
-//     }
-//     return name + " " + maxResult;
-// }
-// };
