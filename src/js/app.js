@@ -26,7 +26,6 @@ formEl.addEventListener('submit', (evt) => {
     priceEl.value = '';
     rebuildTree(productEl, spendList);
 });
-
 function rebuildTree(container, list) {
     container.innerHTML = '';
     for (const item of list.items) {
