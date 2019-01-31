@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SPEND SAVER</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <form class="form-inline" id="product-form">
+                <div class="form-group mb-2 mt-2">
+                    <label for="product-name" class="sr-only">Product name</label>
+                    <p>Введите наименование покупки</p>
+                    <input type="text" class="form-control" id="product-name">
+                    <p>Введите стоимость в рублях</p>
+                    <input type="text" class="form-control" id="product-price">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2 mt-2">Записать</button>
+            </form>
+            <ul class="list-group" id="product-list">
+            </ul>
+        </div>
+    </div>
+    <p id="finish1">Суммарно совершено покупок на: <span id="totalPrice">рубля(-ей)</span></p>
+    <p id="finish2">Самая дорогая покупка: <span id="titleMax"></span>за <span id="priceMax"> рубля(-ей)</span></p>
+</div>
+<script src="js/storage.js" type="module"></script>
+<script src="js/lib.js" type="module"></script>
+<script src="js/app.js" type="module"></script>
+</body>
+</html>
