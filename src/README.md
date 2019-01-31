@@ -1,0 +1,1 @@
+#Project status [![Build Status](https://travis-ci.org/rustamSurmashev/spendSaver.svg?branch=master)](https://travis-ci.org/rustamSurmashev/spendSaver)
