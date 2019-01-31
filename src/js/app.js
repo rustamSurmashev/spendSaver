@@ -5,10 +5,10 @@ const formEl = document.querySelector('#product-form');
 const nameEl = document.querySelector('#product-name');
 const priceEl = document.querySelector('#product-price');
 const productEl = document.querySelector('#product-list');
+const totalPriceEl = document.querySelector('#totalPrice');
 
 const spendList = new Total(new ProductLocalStorage());
 rebuildTree(productEl, spendList);
-
 
 formEl.addEventListener('submit', (evt) => {
     evt.preventDefault();
@@ -22,10 +22,8 @@ formEl.addEventListener('submit', (evt) => {
 
     const product = new Product(name, price);
     spendList.add(product);
-
     nameEl.value = '';
     priceEl.value = '';
-
     rebuildTree(productEl, spendList);
 });
 

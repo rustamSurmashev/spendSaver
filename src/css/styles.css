@@ -12,7 +12,11 @@
 
 }
 
-#finish {
+#finish1 {
+    color: mediumblue;
+    font-weight: 600;
+}
+#finish2 {
     color: mediumblue;
     font-weight: 600;
 }
