@@ -28,3 +28,13 @@ export class Total {
         this.storage.deleteAll(item);
     }
 }
+
+
+let arrayTotal = [];
+export function sum (arrayTotal) {
+    let resultTotal = 0;
+    for (let i=0; i < arrayTotal.length; i++){
+        resultTotal = resultTotal + arrayTotal[i];
+    }
+    return resultTotal;
+}
