@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "serve": "browser-sync start -s \"src\" -f \".\""
+    "serve": "browser-sync start -s \"src\" -f \".\"",
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",

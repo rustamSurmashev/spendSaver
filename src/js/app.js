@@ -1,5 +1,7 @@
 import {Total, Product} from './lib.js';
 import {ProductLocalStorage} from "./storage.js";
+import {sum} from "./lib.js";
+
 
 const formEl = document.querySelector('#product-form');
 const nameEl = document.querySelector('#product-name');
@@ -9,6 +11,8 @@ const totalPriceEl = document.querySelector('#totalPrice');
 
 const spendList = new Total(new ProductLocalStorage());
 rebuildTree(productEl, spendList);
+
+
 
 formEl.addEventListener('submit', (evt) => {
     evt.preventDefault();
@@ -25,9 +29,15 @@ formEl.addEventListener('submit', (evt) => {
     nameEl.value = '';
     priceEl.value = '';
     rebuildTree(productEl, spendList);
+
+    // let arr = [product.price];
+    // let sum = (accumulator, price)=> accumulator + price;
+    // totalPriceEl.textContent = arr.reduce(sum);
 });
+
 function rebuildTree(container, list) {
     container.innerHTML = '';
+
     for (const item of list.items) {
         const liEl = document.createElement('li');
         liEl.className = 'list-group-item';
@@ -70,8 +80,16 @@ function rebuildTree(container, list) {
             spendList.deleteAll(item);
             location.reload(true);
         });
+        // let arr = [item.price];
+        // let sum = (accumulator, price)=> accumulator + price;
+        // totalPriceEl.textContent = arr.reduce(sum);
+
+        // let arrSum = [item.price];
+        // let totalPrice = sum(arrSum);
+        // console.log(totalPrice);
 
         container.appendChild(liEl);
+
     }
 
     if (list.items.length !== 0) {
@@ -81,4 +99,5 @@ function rebuildTree(container, list) {
         const last = container.lastElementChild;
         last.querySelector('[data-id=down]').classList.add('invisible');
     }
+
 };
