@@ -30,11 +30,20 @@ export class Total {
 }
 
 
-let arrayTotal = [];
+
 export function sum (arrayTotal) {
     let resultTotal = 0;
     for (let i=0; i < arrayTotal.length; i++){
         resultTotal = resultTotal + arrayTotal[i];
     }
     return resultTotal;
+}
+export function max (arrayMax) {
+    let resultMax = arrayMax[0];
+    for (let i=0; i<arrayMax.length; i++) {
+        if (resultMax < arrayMax[i]){
+            resultMax = arrayMax [i];
+        }
+    }
+    return resultMax;
 }
