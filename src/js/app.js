@@ -1,13 +1,10 @@
-import {Total, Product} from './lib.js';
+import {Total, Product, sum, max} from './lib.js';
 import {ProductLocalStorage} from "./storage.js";
-import {sum} from "./lib.js";
-
 
 const formEl = document.querySelector('#product-form');
 const nameEl = document.querySelector('#product-name');
 const priceEl = document.querySelector('#product-price');
 const productEl = document.querySelector('#product-list');
-const totalPriceEl = document.querySelector('#totalPrice');
 
 const spendList = new Total(new ProductLocalStorage());
 rebuildTree(productEl, spendList);
@@ -28,11 +25,14 @@ formEl.addEventListener('submit', (evt) => {
     spendList.add(product);
     nameEl.value = '';
     priceEl.value = '';
-    rebuildTree(productEl, spendList);
 
-    // let arr = [product.price];
-    // let sum = (accumulator, price)=> accumulator + price;
-    // totalPriceEl.textContent = arr.reduce(sum);
+    // let arrNew =[price];
+    // let fff = sum(arrNew);
+    // let ggg = max(arrNew);
+    // console.log(fff);
+    // console.log(ggg);
+
+    rebuildTree(productEl, spendList);
 });
 
 function rebuildTree(container, list) {
@@ -43,10 +43,10 @@ function rebuildTree(container, list) {
         liEl.className = 'list-group-item';
         liEl.innerHTML = `
             <span data-id="text">${item.name} ${item.price} рублей(-я)</span>
+            <button data-id="deleteAll" class="btn btn-danger btn-sm float-right">Удалить всё</button>
+            <button data-id="remove" class="btn btn-danger btn-sm float-right">Удалить</button>
             <button data-id="up" class="btn btn-danger btn-sm float-right">&uarr;</button>
             <button data-id="down" class="btn btn-danger btn-sm float-right">&darr;</button>
-            <button data-id="remove" class="btn btn-danger btn-sm float-right">Удалить</button>
-            <button data-id="deleteAll" class="btn btn-danger btn-sm float-right">Удалить всё</button>
         `;
         const textEl = liEl.querySelector('[data-id=text]');
         if (item.done) {
@@ -80,17 +80,9 @@ function rebuildTree(container, list) {
             spendList.deleteAll(item);
             location.reload(true);
         });
-        // let arr = [item.price];
-        // let sum = (accumulator, price)=> accumulator + price;
-        // totalPriceEl.textContent = arr.reduce(sum);
-
-        let arrSum = [item.price];
-        let totalPrice = sum(arrSum);
-        console.log(totalPrice);
 
         container.appendChild(liEl);
-
-    }
+}
 
     if (list.items.length !== 0) {
         const first = container.firstElementChild;
