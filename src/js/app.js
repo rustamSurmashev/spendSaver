@@ -84,9 +84,9 @@ function rebuildTree(container, list) {
         // let sum = (accumulator, price)=> accumulator + price;
         // totalPriceEl.textContent = arr.reduce(sum);
 
-        // let arrSum = [item.price];
-        // let totalPrice = sum(arrSum);
-        // console.log(totalPrice);
+        let arrSum = [item.price];
+        let totalPrice = sum(arrSum);
+        console.log(totalPrice);
 
         container.appendChild(liEl);
 
