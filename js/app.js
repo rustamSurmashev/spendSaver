@@ -5,11 +5,11 @@ const formEl = document.querySelector('#product-form');
 const nameEl = document.querySelector('#product-name');
 const priceEl = document.querySelector('#product-price');
 const productEl = document.querySelector('#product-list');
+const priceSumEl = document.querySelector('#sum-price');
+const priceMaxEl = document.querySelector('#max-price');
 
 const spendList = new Total(new ProductLocalStorage());
 rebuildTree(productEl, spendList);
-
-
 
 formEl.addEventListener('submit', (evt) => {
     evt.preventDefault();
@@ -26,11 +26,13 @@ formEl.addEventListener('submit', (evt) => {
     nameEl.value = '';
     priceEl.value = '';
 
-    // let arrNew =[price];
-    // let fff = sum(arrNew);
-    // let ggg = max(arrNew);
-    // console.log(fff);
-    // console.log(ggg);
+    const priceList = spendList.items;
+    let priceArr = [];
+    for (const item of priceList){
+        priceArr.push(item.price);
+    }
+    priceSumEl.textContent = sum(priceArr);
+    priceMaxEl.textContent = max(priceArr);
 
     rebuildTree(productEl, spendList);
 });
